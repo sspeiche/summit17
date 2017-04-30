@@ -8,6 +8,11 @@ Apply image-stream updates (nodejs):
   oc apply -f https://raw.githubusercontent.com/openshift/origin/master/examples/image-streams/image-streams-rhel7.json -n openshift
 
 Apply image-stream updates (java-s2i):
-  oc apply -f https://raw.githubusercontent.com/jboss-openshift/application-templates/master/openjdk/openjdk18-web-basic-s2i.json -n openshift
+  oc apply -f https://raw.githubusercontent.com/jboss-openshift/application-templates/master/jboss-image-streams.json -n openshift
 
-  
+See pipeline samples
+
+  oc new-app -f https://raw.githubusercontent.com/sspeiche/summit17
+
+
+  oc adm policy add-cluster-role-to-user cluster-admin admin
