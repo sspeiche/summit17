@@ -10,7 +10,7 @@ Running template broker: https://github.com/spadgett/origin-web-catalog/wiki/Run
 
 == Apply image-stream updates (java-s2i) ==
 
-  oc apply -f https://raw.githubusercontent.com/jboss-openshift/application-templates/master/jboss-image-streams.json -n openshift
+  oc apply -f https://raw.githubusercontent.com/sspeiche/summit17/master/openjdk-image-stream.json -n openshift
 
 == Setup MLB parks sample ==
 
