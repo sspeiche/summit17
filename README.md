@@ -1,16 +1,18 @@
 Setup steps:
 
-First follow setting up the catalog and sample broker: https://github.com/spadgett/origin-web-catalog/wiki/Running-the-catalog-with-the-%22UPS%22-sample-broker
+First follow setting up the catalog and sample broker https://github.com/spadgett/origin-web-catalog/wiki/Running-the-catalog-with-the-%22UPS%22-sample-broker
 
 Running template broker: https://github.com/spadgett/origin-web-catalog/wiki/Running-the-Catalog-with-the-Template-Broker
 
-Apply image-stream updates (nodejs):
+== Apply image-stream updates (nodejs) ==
+
   oc apply -f https://raw.githubusercontent.com/openshift/origin/master/examples/image-streams/image-streams-rhel7.json -n openshift
 
-Apply image-stream updates (java-s2i):
+== Apply image-stream updates (java-s2i) ==
+
   oc apply -f https://raw.githubusercontent.com/jboss-openshift/application-templates/master/jboss-image-streams.json -n openshift
 
-See pipeline samples
+== Setup MLB parks sample ==
 
 oc new-project mlbparks --displayName="MLB Parks App"
 
