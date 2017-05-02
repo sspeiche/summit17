@@ -20,7 +20,7 @@ oc process -f https://raw.githubusercontent.com/sspeiche/nationalparks/summit/os
 oc apply -f https://raw.githubusercontent.com/sspeiche/summit17/master/nationalparks-pipeline.json
 oc start-build nationalparks-pipeline
 
-oc process -f https://raw.githubusercontent.com/sspeiche/nationalparks/master/ose3/pipeline-buildconfig-template.json | oc create -f -
+oc process -f https://raw.githubusercontent.com/sspeiche/parksmap-web/master/ose3/pipeline-buildconfig-template.json | oc create -f -
 
 
   oc adm policy add-cluster-role-to-user cluster-admin admin
