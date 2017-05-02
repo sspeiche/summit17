@@ -12,11 +12,11 @@ Apply image-stream updates (java-s2i):
 
 See pipeline samples
 
-oc process -f https://raw.githubusercontent.com/sspeiche/mlbparks/master/ose3/pipeline-buildconfig-template.json | oc create -f -
-oc process -f https://raw.githubusercontent.com/sspeiche/summit17/master/mlbparks-pipeline.yaml | oc create -f -
+oc process -f https://raw.githubusercontent.com/sspeiche/mlbparks/summit/ose3/pipeline-buildconfig-template.json | oc create -f -
+# oc apply -f https://raw.githubusercontent.com/sspeiche/summit17/master/mlbparks-pipeline.json
 
 oc process -f https://raw.githubusercontent.com/sspeiche/nationalparks/master/ose3/pipeline-buildconfig-s2i-template.json | oc create -f -
-oc process -f https://raw.githubusercontent.com/sspeiche/summit17/master/nationalparks-pipeline.yaml | oc create -f -
+oc apply -f https://raw.githubusercontent.com/sspeiche/summit17/master/nationalparks-pipeline.json
 
 oc process -f https://raw.githubusercontent.com/sspeiche/nationalparks/master/ose3/pipeline-buildconfig-template.json | oc create -f -
 
