@@ -12,7 +12,13 @@ Apply image-stream updates (java-s2i):
 
 See pipeline samples
 
-  oc new-app -f https://raw.githubusercontent.com/sspeiche/summit17
+oc process -f https://raw.githubusercontent.com/sspeiche/mlbparks/master/ose3/pipeline-buildconfig-template.json | oc create -f -
+oc process -f https://raw.githubusercontent.com/sspeiche/summit17/master/mlbparks-pipeline.yaml | oc create -f -
+
+oc process -f https://raw.githubusercontent.com/sspeiche/nationalparks/master/ose3/pipeline-buildconfig-s2i-template.json | oc create -f -
+oc process -f https://raw.githubusercontent.com/sspeiche/summit17/master/nationalparks-pipeline.yaml | oc create -f -
+
+oc process -f https://raw.githubusercontent.com/sspeiche/nationalparks/master/ose3/pipeline-buildconfig-template.json | oc create -f -
 
 
   oc adm policy add-cluster-role-to-user cluster-admin admin

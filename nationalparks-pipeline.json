@@ -1,0 +1,66 @@
+{
+    "kind": "Template",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "nationalparks-pipeline",
+        "creationTimestamp": null
+    },
+    "objects": [
+        {
+            "kind": "BuildConfig",
+            "apiVersion": "v1",
+            "metadata": {
+                "name": "nationalparks-pipeline",
+                "creationTimestamp": null,
+                "labels": {
+                    "app": "nationalparks-pipeline",
+                    "application": "nationalparks-pipeline",
+                    "build": "nationalparks-pipeline",
+                    "createdBy": "nationalparks-template"
+                },
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"kind\":\"BuildConfig\",\"apiVersion\":\"v1\",\"metadata\":{\"name\":\"nationalparks-pipeline\",\"namespace\":\"pipes\",\"creationTimestamp\":null,\"labels\":{\"app\":\"nationalparks-pipeline\",\"application\":\"nationalparks-pipeline\",\"build\":\"nationalparks-pipeline\",\"createdBy\":\"nationalparks-template\"},\"annotations\":{\"openshift.io/generated-by\":\"OpenShiftNewApp\"}},\"spec\":{\"triggers\":[{\"type\":\"GitHub\",\"github\":{\"secret\":\"${GITHUB_TRIGGER_SECRET}\"}},{\"type\":\"Generic\",\"generic\":{\"secret\":\"${GENERIC_TRIGGER_SECRET}\"}}],\"runPolicy\":\"Serial\",\"source\":{\"type\":\"Git\",\"git\":{\"uri\":\"https://github.com/openshift-roadshow/nationalparks.git\",\"ref\":\"master\"}},\"strategy\":{\"type\":\"JenkinsPipeline\",\"jenkinsPipelineStrategy\":{}},\"output\":{},\"resources\":{},\"postCommit\":{},\"nodeSelector\":null},\"status\":{\"lastVersion\":0}}\n",
+                    "openshift.io/generated-by": "OpenShiftNewApp",
+                    "pipeline.alpha.openshift.io/uses": "[{\"name\": \"nationalparks\", \"namespace\": \"\", \"kind\": \"DeploymentConfig\"}]"
+                }
+            },
+            "spec": {
+                "triggers": [
+                    {
+                        "type": "GitHub",
+                        "github": {
+                            "secret": "${GITHUB_TRIGGER_SECRET}"
+                        }
+                    },
+                    {
+                        "type": "Generic",
+                        "generic": {
+                            "secret": "${GENERIC_TRIGGER_SECRET}"
+                        }
+                    }
+                ],
+                "runPolicy": "Serial",
+                "source": {
+                    "type": "Git",
+                    "git": {
+                        "uri": "https://github.com/sspeiche/nationalparks.git",
+                        "ref": "master"
+                    }
+                },
+                "strategy": {
+                    "type": "JenkinsPipeline",
+                    "jenkinsPipelineStrategy": {
+                        "jenkinsfilePath": "Jenkinsfile"
+                    }
+                },
+                "output": {},
+                "resources": {},
+                "postCommit": {},
+                "nodeSelector": {}
+            },
+            "status": {
+                "lastVersion": 0
+            }
+        }
+    ]
+}
